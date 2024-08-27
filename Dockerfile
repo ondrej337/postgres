@@ -1,5 +1,5 @@
 ARG PG_MAJOR=16
-ARG PG_MINOR=4-4
+ARG PG_MINOR=4.4
 ARG DEBIANV=bookworm
 FROM ghcr.io/cloudnative-pg/postgresql:$PG_MAJOR.$PG_MINOR-$DEBIANV
 USER root
