@@ -7,8 +7,8 @@ USER root
 COPY requirements.txt /tmp
 RUN set -xe; \
 	apt-get update; \
-	apt-get install -y --no-install-recommends \
-		"postgresql-plpython3-$PG_MAJOR" ; \
+	apt-get install -y --no-install-recommends "postgresql-plpython3-$PG_MAJOR" ;\
+	apt-get install -y "postgresql-$PG_MAJOR-cron"; \
 	pip3 install --break-system-packages --no-deps -r /tmp/requirements.txt; \
 	rm -fr /tmp/* ; \
 	rm -rf /var/lib/apt/lists/*;
